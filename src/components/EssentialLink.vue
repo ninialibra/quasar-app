@@ -1,14 +1,6 @@
 <template>
-  <q-item
-    clickable
-    tag="a"
-    target="_blank"
-    :href="props.link"
-  >
-    <q-item-section
-      v-if="props.icon"
-      avatar
-    >
+  <q-item clickable tag="a" @click="navigateTo">
+    <q-item-section v-if="props.icon" avatar>
       <q-icon :name="props.icon" />
     </q-item-section>
 
@@ -20,25 +12,37 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
 const props = defineProps({
   title: {
     type: String,
-    required: true
+    required: true,
   },
 
   caption: {
     type: String,
-    default: ''
+    default: '',
   },
 
   link: {
     type: String,
-    default: '#'
+    default: '#',
   },
 
   icon: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 })
+
+const navigateTo = () => {
+  if (props.link.startsWith('http')) {
+    window.open(props.link, '_blank')
+  } else {
+    router.push({ name: props.link })
+  }
+}
 </script>
