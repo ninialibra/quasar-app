@@ -9,15 +9,9 @@ export const useUIStore = defineStore('ui', {
     getSideMenuOpen: (state) => state.isSideMenuOpen,
   },
 
-  actions: {
-    increment() {
-      this.counter++
-    },
-  },
-
   mutations: {
-    toggleSideMenu(state) {
-      this.isSideMenuOpen = !state.isSideMenuOpen
+    toggleMenu(state) {
+      state.isSideMenuOpen = !state.isSideMenuOpen
     },
   },
 })

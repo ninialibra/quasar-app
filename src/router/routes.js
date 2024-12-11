@@ -10,6 +10,8 @@ const routes = [
         component: () => import('pages/TypographyPage.vue'),
       },
       { path: 'flex', name: 'flex', component: () => import('pages/FlexPage.vue') },
+      { path: 'dialog', name: 'dialog', component: () => import('pages/DialogPage.vue') },
+      { path: 'formus', name: 'formus', component: () => import('pages/FormPage.vue') },
     ],
   },
 

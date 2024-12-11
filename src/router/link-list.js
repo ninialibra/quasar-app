@@ -17,4 +17,16 @@ export const linksList = [
     icon: 'las la-layer-group',
     link: 'flex',
   },
+  {
+    title: 'Dialogs',
+    caption: 'Alertas y diálogos',
+    icon: 'las la-window-minimize',
+    link: 'dialog',
+  },
+  {
+    title: 'Forms',
+    caption: 'Formularios',
+    icon: 'las la-window-minimize',
+    link: 'formus',
+  },
 ]
